@@ -21,7 +21,7 @@ const Navbar = ({ pagename }) => {
           <img src={demouser} alt="avatar" className="rounded-full h-8 w-8" />
         </div>
         <div className="flex flex-col text-sm">
-          <span className="font-medium">John Doe</span>
+          <span className="font-medium">Example One</span>
           <span>Super Admin</span>
         </div>
       </div>

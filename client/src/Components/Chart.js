@@ -3,7 +3,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
 const data = {
-  labels: ["Today", "Yesterday", "Tomorrow", "Last Month"],
+  labels: ["Completed", "Ongoing", "pending", "cancelled"],
   datasets: [
     {
       data: [300, 50, 100, 150],
@@ -33,9 +33,8 @@ const ChartCard = ({ heading, fields }) => {
   }, []);
 
   const current = new Date();
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
+  const date = `${current.getDate()}/${current.getMonth() + 1
+    }/${current.getFullYear()}`;
 
   return (
     <div className="w-full sm:w-1/2 p-2">

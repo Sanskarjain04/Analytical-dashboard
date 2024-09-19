@@ -32,21 +32,36 @@ app.use("/api/register", async (req, res) => {
     res.status(500).json({ success: false, message: error });
   }
 });
-
 app.use("/api/login", async (req, res) => {
   try {
+    // Find the user by email
     const user = await User.findOne({
       email: req.body.email,
-      password: req.body.password,
     });
+
     if (!user) {
       return res
         .status(401)
         .json({ success: false, message: "Invalid email or password" });
     }
-    res.status(200).json({ success: true, data: user });
+
+    // Compare the provided password with the hashed password stored in the database
+    const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+
+    if (!isPasswordValid) {
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid email or password" });
+    }
+
+    // Generate JWT token after successful login
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "30d",
+    });
+
+    res.status(200).json({ success: true, data: { user, token } });
   } catch (error) {
-    res.status(500).json({ success: false, message: error });
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 

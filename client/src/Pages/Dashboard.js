@@ -17,9 +17,8 @@ const Dashboard = () => {
     <div className="flex flex-col h-screen">
       <div className="flex flex-grow">
         <div
-          className={`w-1/4 h-full bg-gray-200 ${
-            showMenu ? "" : "hidden"
-          } lg:block`}>
+          className={`w-1/4 h-full bg-gray-200 ${showMenu ? "" : "hidden"
+            } lg:block`}>
           <Menubar />
         </div>
         <div className="flex-1 sm:relative">
@@ -31,23 +30,23 @@ const Dashboard = () => {
             <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-2 mb-4">
               <Card
                 title={"350K"}
-                subtitle={"Total revenue from home service"}
+                subtitle={"Total savings from pwd projects"}
                 icon={revenue}
                 color={"bg-gradient-to-r from-cyan-500 to-blue-500"}
               />
             </div>
             <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-2 mb-4">
               <Card
-                title={"1.5K"}
-                subtitle={"Reward Points redeemed"}
+                title={"150K"}
+                subtitle={"From Nagar Nigam Projects"}
                 icon={reedem}
                 color={"bg-gradient-to-r from-purple-500 to-pink-500"}
               />
             </div>
             <div className="w-full lg:w-1/4 px-2 mb-4">
               <Card
-                title={"1.2K"}
-                subtitle={"Top Products/Services"}
+                title={"120K"}
+                subtitle={"From departmental projects"}
                 icon={service}
                 color={"bg-gradient-to-r from-amber-400 to-amber-600"}
               />
@@ -55,50 +54,50 @@ const Dashboard = () => {
             <div className="w-full lg:w-1/4 px-2 mb-4">
               <Card
                 title={"50K"}
-                subtitle={"New Users"}
+                subtitle={"From other projects"}
                 icon={users}
                 color={"bg-gradient-to-r from-lime-400 to-lime-600"}
               />
             </div>
             <div className="flex flex-col sm:flex-row gap-2 justify-between w-full px-2 mb-4">
               <ChartComponent
-                heading="Total Active Users"
+                heading="Project Analysis"
                 fields={[
                   {
-                    name: "Today's active users",
+                    name: "Completed Projects",
                     value: 300,
                   },
                   {
-                    name: "Yesterday's active users",
+                    name: "Ongoing Projects",
                     value: 50,
                   },
                   {
-                    name: "Tomorrow's active users",
+                    name: "Pending Projects",
                     value: 100,
                   },
                   {
-                    name: "Last Month's active users",
+                    name: "Cancelled Projects",
                     value: 150,
                   },
                 ]}
               />
               <ChartComponent
-                heading="Total Active bookings"
+                heading=" Active Analysis"
                 fields={[
                   {
-                    name: "Today's active bookings",
-                    value: 300,
+                    name: "Today's  ",
+                    value: 190,
                   },
                   {
-                    name: "Yesterday's active bookings",
+                    name: "Past Week's",
                     value: 50,
                   },
                   {
-                    name: "Tomorrow's active bookings",
+                    name: "Past Month's ",
                     value: 100,
                   },
                   {
-                    name: "Last Month's active bookings",
+                    name: "Past Six Month's",
                     value: 150,
                   },
                 ]}
